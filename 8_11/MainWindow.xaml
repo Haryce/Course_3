@@ -1,0 +1,49 @@
+<Window x:Class="AuthApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Авторизация" Height="350" Width="400"
+        WindowStartupLocation="CenterScreen">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <TextBlock Grid.Row="0" Text="Вход в систему" 
+                   FontSize="20" FontWeight="Bold" 
+                   HorizontalAlignment="Center" Margin="0,0,0,20"/>
+        
+        <StackPanel Grid.Row="1" Margin="0,0,0,10">
+            <TextBlock Text="Логин:" FontWeight="Bold"/>
+            <TextBox x:Name="LoginTextBox" Height="25" 
+                     Text="{Binding CurrentUser.Username}"/>
+        </StackPanel>
+        
+        <StackPanel Grid.Row="2" Margin="0,0,0,15">
+            <TextBlock Text="Пароль:" FontWeight="Bold"/>
+            <PasswordBox x:Name="PasswordBox" Height="25"/>
+        </StackPanel>
+        
+        <CheckBox Grid.Row="3" Content="Запомнить меня" 
+                  IsChecked="{Binding RememberMe}"
+                  Margin="0,0,0,15"/>
+        
+        <StackPanel Grid.Row="4" Orientation="Horizontal" 
+                    HorizontalAlignment="Center">
+            <Button Content="Войти" Click="LoginButton_Click" 
+                    Width="80" Height="30" Margin="0,0,10,0"/>
+            <Button Content="Регистрация" Click="RegisterButton_Click" 
+                    Width="100" Height="30"/>
+        </StackPanel>
+        
+        <Border Grid.Row="5" Background="#FFF0F0F0" 
+                Margin="0,20,0,0" Padding="10">
+            <TextBlock x:Name="StatusText" Text="Введите данные для входа" 
+                       TextWrapping="Wrap" HorizontalAlignment="Center"/>
+        </Border>
+    </Grid>
+</Window>
