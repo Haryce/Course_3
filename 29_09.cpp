@@ -139,9 +139,9 @@ int main() {
     library.addBook("99", "Джордж");
     library.addBook("ст д", "Роберт");  
     library.showBooks();
-    library.takeBook("1984");
-    library.returnBook("1984");
-    library.takeBook("Чистый код");   
+    library.takeBook("99");
+    library.takeBook("ст д");   
     library.showBooks();   
     return 0;
 }
+
